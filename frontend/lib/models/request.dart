@@ -6,8 +6,8 @@ class RequestModel {
   List<ItemModel> items;
   String status;
   final String? reassignedFrom;
-  final String? assignedTo; // ✅ add this
-  final String? createdAt; // ✅ add this
+  final String? assignedTo; 
+  final String? createdAt; 
 
   RequestModel({
     required this.id,
@@ -26,8 +26,8 @@ class RequestModel {
       items: (json['items'] as List).map((i) => ItemModel.fromJson(i)).toList(),
       status: json['status'] ?? 'Pending',
       reassignedFrom: json['reassignedFrom'],
-      assignedTo: json['assignedTo'], // ✅ safe parse
-      createdAt: json['createdAt'], // ✅ safe parse
+      assignedTo: json['assignedTo'], 
+      createdAt: json['createdAt'], 
     );
   }
 }

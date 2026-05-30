@@ -69,7 +69,7 @@ class UserProfileScreen extends ConsumerWidget {
                   ),
                 ),
                 label: const Text(
-                  "Send Request",
+                  "Assign Your Tasks",
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
@@ -96,7 +96,7 @@ class UserProfileScreen extends ConsumerWidget {
                   ),
                 ),
                 label: const Text(
-                  "My Requests",
+                  "My Tasks",
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),

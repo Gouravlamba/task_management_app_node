@@ -10,12 +10,12 @@ const requestRoutesFactory = require("./routes/requests");
 const app = express();
 const server = http.createServer(app);
 
-app.use(cors({ origin: "*" }));   // ✅ allow all origins
+app.use(cors({ origin: "*" }));   
 app.use(bodyParser.json());
 
 const io = new Server(server, {
   cors: {
-    origin: "*",                  // ✅ allow Flutter web
+    origin: "*",             
     methods: ["GET", "POST", "PATCH"],
   },
 });

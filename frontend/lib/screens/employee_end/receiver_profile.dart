@@ -59,7 +59,7 @@ class ReceiverProfileScreen extends ConsumerWidget {
                 },
                 icon: const Icon(Icons.list, color: Colors.white),
                 label: const Text(
-                  "Requests",
+                  "Assigned Tasks",
                   style: TextStyle(color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(

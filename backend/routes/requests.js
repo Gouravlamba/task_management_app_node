@@ -4,8 +4,7 @@ const { v4: uuidv4 } = require("uuid");
 module.exports = (store, io) => {
   const router = express.Router();
 
-  // Create request
-  // Body: { userId: string, items: [ "itemName1", "itemName2", ... ], assignedTo?: string }
+  
   router.post("/", (req, res) => {
     const { userId, items, assignedTo } = req.body;
     if (!userId || !items || !Array.isArray(items) || items.length === 0) {
@@ -22,28 +21,25 @@ module.exports = (store, io) => {
     };
 
     store.requests.push(newRequest);
-    io.emit("request_created", newRequest); // real-time notify
+    io.emit("request_created", newRequest);
     return res.json(newRequest);
   });
 
-  // Get requests
-  // Query params: ?role=end_user&userId=xxx   OR ?role=receiver
+
   router.get("/", (req, res) => {
     const { role, userId } = req.query;
     if (role === "end_user" && userId) {
       return res.json(store.requests.filter((r) => r.userId === userId));
     }
     if (role === "receiver") {
-      // receiver sees requests that are pending or partially fulfilled (system can be improved)
+    
       const pendingOrPartial = store.requests.filter((r) => r.status === "Pending" || r.status === "Partially Fulfilled");
       return res.json(pendingOrPartial);
     }
     return res.json(store.requests);
   });
 
-  // Confirm items in a request
-  // PATCH /requests/:id/confirm
-  // Body: { confirmations: [{ itemId: "...", available: true/false }], receiverId: "..." }
+
   router.patch("/:id/confirm", (req, res) => {
     const { id } = req.params;
     const { confirmations } = req.body;

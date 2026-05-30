@@ -64,7 +64,7 @@ class _ConfirmRequestScreenState extends ConsumerState<ConfirmRequestScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Confirm Request ${req.id.substring(0, 6)}',
+          'Pending Task ${req.id.substring(0, 6)}',
           style: const TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -77,7 +77,7 @@ class _ConfirmRequestScreenState extends ConsumerState<ConfirmRequestScreen> {
             Text('Status: ${req.status}',
                 style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 12),
-            const Text('Items',
+            const Text('Tasks',
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),
             const SizedBox(height: 8),
@@ -109,7 +109,7 @@ class _ConfirmRequestScreenState extends ConsumerState<ConfirmRequestScreen> {
                 child: _submitting
                     ? const CircularProgressIndicator(color: Colors.white)
                     : const Text(
-                        'Submit Confirmation',
+                        'Task Completed',
                         style: TextStyle(color: Colors.white),
                       ),
               ),

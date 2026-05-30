@@ -59,7 +59,7 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          'Add Request',
+          'Assign Tasks',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
@@ -77,7 +77,7 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                       child: TextField(
                         controller: ctrl,
                         decoration: InputDecoration(
-                          hintText: "Add item",
+                          hintText: "Add task",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -104,7 +104,7 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                         borderRadius: BorderRadius.circular(12)),
                   ),
                   icon: const Icon(Icons.add),
-                  label: const Text("Add Item"),
+                  label: const Text("Add Task"),
                 ),
                 const SizedBox(width: 16),
                 ElevatedButton(
@@ -115,7 +115,7 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12)),
                   ),
-                  child: const Text("Submit"),
+                  child: const Text("Send"),
                 ),
               ],
             )

@@ -40,7 +40,7 @@ class _ReceiverRequestListScreenState
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          'All Requests',
+          'All Tasks',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -66,7 +66,7 @@ class _ReceiverRequestListScreenState
           if (items.isEmpty) {
             return const Center(
               child: Text(
-                "No requests assigned yet.",
+                "No tasks assigned yet.",
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
             );
@@ -86,12 +86,12 @@ class _ReceiverRequestListScreenState
                 margin: const EdgeInsets.symmetric(vertical: 8),
                 child: ListTile(
                   title: Text(
-                    'Request ${r.id.substring(0, 6)}',
+                    'Task ${r.id.substring(0, 6)}',
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                   subtitle: Text(
-                    '${r.items.length} items — ${r.status}',
+                    '${r.items.length} tasks — ${r.status}',
                     style: const TextStyle(color: Colors.white70),
                   ),
                   trailing: ElevatedButton(

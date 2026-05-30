@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:request_handling_app/screens/manager_end/user_profile.dart';
 import '../../providers/auth_provider.dart';
-import '../end_user/user_profile.dart';
-import '../receiver/receiver_profile.dart';
+import '../employee_end/receiver_profile.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -58,7 +58,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
         title: const Text(
-          'Welcome to Our App',
+          'Welcome to Task Manager App',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -90,11 +90,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     items: const [
                       DropdownMenuItem(
                           value: 'user',
-                          child: Text('User',
+                          child: Text('Manager',
                               style: TextStyle(color: Colors.white))),
                       DropdownMenuItem(
                           value: 'receiver',
-                          child: Text('Receiver',
+                          child: Text('Employee',
                               style: TextStyle(color: Colors.white))),
                     ],
                     onChanged: (v) => setState(() => _role = v ?? 'user'),

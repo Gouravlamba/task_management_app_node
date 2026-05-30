@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:request_handling_app/screens/manager_end/request_list.dart';
+import 'package:request_handling_app/screens/manager_end/user_profile.dart';
 import '../providers/auth_provider.dart';
-import '../screens/end_user/user_profile.dart';
-import '../screens/end_user/request_list.dart';
-import '../screens/receiver/receiver_profile.dart';
-import '../screens/receiver/receiver_request_list.dart';
+
+import '../screens/employee_end/receiver_profile.dart';
+import '../screens/employee_end/receiver_request_list.dart';
 import '../screens/auth/login_screen.dart';
 
 class AppDrawer extends ConsumerWidget {
@@ -32,7 +33,7 @@ class AppDrawer extends ConsumerWidget {
               username,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            accountEmail: Text(role == "end_user" ? "End User" : "Receiver"),
+            accountEmail: Text(role == "end_user" ? "Manager" : "Employee"),
           ),
           ListTile(
             leading: const Icon(Icons.account_circle, color: Colors.blue),
@@ -50,8 +51,8 @@ class AppDrawer extends ConsumerWidget {
           ),
           ListTile(
             leading: const Icon(Icons.list, color: Colors.blue),
-            title:
-                Text(role == "end_user" ? "My Requests" : "Assigned Requests"),
+            title: Text(
+                role == "end_user" ? "List of all Tasks" : "Assigned Tasks"),
             onTap: () {
               Navigator.pushReplacement(
                 context,

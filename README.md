@@ -56,7 +56,7 @@ Major frameworks/libraries:
 
 ### 1. **Architecture Overview**
 
-```mermaid
+mermaid
 flowchart TD
     Client[User Interface (Web/Mobile App)]
     API[Node.js API Layer<br/>(JavaScript/Express)]
